@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/grid_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:alignmentMode="alignBounds"
+        app:columnCount="3"
+        app:orientation="horizontal"
+        app:useDefaultMargins="false">
+
+        <TextView
+            android:id="@+id/item_decoration"
+            android:layout_height="150dp"
+            android:text="ItemDecoration"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/bg_grid_item"
+            android:layout_margin="10dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:gravity="bottom|center_horizontal"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:drawableTop="@mipmap/ic_launcher_round"
+            android:onClick="onItemDecorationClick"/>
+
+        <TextView
+            android:id="@+id/item_decoration1"
+            android:layout_height="150dp"
+            android:text="ItemDecoration"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/bg_grid_item"
+            android:layout_margin="10dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:gravity="bottom|center_horizontal"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:drawableTop="@mipmap/ic_launcher_round"
+            android:onClick="onItemDecorationClick"/>
+
+        <TextView
+            android:id="@+id/item_decoration2"
+            android:layout_height="150dp"
+            android:text="ItemDecoration"
+            android:textSize="14sp"
+            android:textColor="@android:color/black"
+            android:background="@drawable/bg_grid_item"
+            android:layout_margin="10dp"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:gravity="bottom|center_horizontal"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:drawableTop="@mipmap/ic_launcher_round"
+            android:onClick="onItemDecorationClick"/>
+
+
+    </androidx.gridlayout.widget.GridLayout>
+
+</androidx.core.widget.NestedScrollView>
