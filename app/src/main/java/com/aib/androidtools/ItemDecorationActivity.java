@@ -37,7 +37,7 @@ public class ItemDecorationActivity extends AppCompatActivity {
         adapter.addAll(Arrays.asList(getResources().getStringArray(R.array.vertical_items)));
         recyclerView.setAdapter(adapter);
 
-        
+
     }
 
 }
