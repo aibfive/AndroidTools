@@ -1,17 +1,11 @@
 package com.aib.base.swipeback;
 
 import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.aib.base.frame.FrameActivity;
-import com.aib.base.swipeback.SwipeBackActivityHelper;
-import com.aib.base.swipeback.SwipeBackLayout;
 import com.aib.base.swipeback.tools.Util;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by zh on 2018/10/19.

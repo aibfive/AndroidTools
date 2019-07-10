@@ -16,15 +16,15 @@ public class LinearItemDecoration extends RecyclerView.ItemDecoration {
     private int orientation = VERTICAL;
     private int include;
 
-    public static final int VERTICAL_INCLUDE_NULL = 0x001;
-    public static final int VERTICAL_INCLUDE_TOP = 0x002;
-    public static final int VERTICAL_INCLUDE_BOTTOM = 0x003;
-    public static final int VERTICAL_INCLUDE_TOP_BOTTOM = 0x004;
+    public static final int VERTICAL_INCLUDE_NULL = 0x001;  //垂直--不包含顶、底部
+    public static final int VERTICAL_INCLUDE_TOP = 0x002;  //垂直--仅包含顶部
+    public static final int VERTICAL_INCLUDE_BOTTOM = 0x003;  //垂直--仅包含底部
+    public static final int VERTICAL_INCLUDE_TOP_BOTTOM = 0x004;  //垂直--包含顶、底部
 
-    public static final int HORIZONTAL_INCLUDE_NULL = 0x005;
-    public static final int HORIZONTAL_INCLUDE_LEFT = 0x006;
-    public static final int HORIZONTAL_INCLUDE_RIGHT = 0x007;
-    public static final int HORIZONTAL_INCLUDE_LEFT_RIGHT = 0x008;
+    public static final int HORIZONTAL_INCLUDE_NULL = 0x005;  //水平--不包含左、右部
+    public static final int HORIZONTAL_INCLUDE_LEFT = 0x006;  //水平--仅包含左部
+    public static final int HORIZONTAL_INCLUDE_RIGHT = 0x007;  //水平--仅包含右部
+    public static final int HORIZONTAL_INCLUDE_LEFT_RIGHT = 0x008;  //水平--包含左、右部
 
     public LinearItemDecoration(int dividerHeight, int color){
         this.dividerHeight = dividerHeight;

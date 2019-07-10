@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context=".HorizontalDecorationActivity">
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <com.aib.base.widget.DrawableRadioButton
+            android:id="@+id/rb_null"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Null"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:button="@null"
+            android:drawableLeft="@drawable/icon_select"
+            android:drawablePadding="10dp"
+            android:checked="true"/>
+
+        <com.aib.base.widget.DrawableRadioButton
+            android:id="@+id/rb_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Left"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:button="@null"
+            android:drawableLeft="@drawable/icon_select"
+            android:drawablePadding="10dp"/>
+
+        <com.aib.base.widget.DrawableRadioButton
+            android:id="@+id/rb_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Right"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:button="@null"
+            android:drawableLeft="@drawable/icon_select"
+            android:drawablePadding="10dp"/>
+
+        <com.aib.base.widget.DrawableRadioButton
+            android:id="@+id/rb_include"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Include"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:button="@null"
+            android:drawableLeft="@drawable/icon_select"
+            android:drawablePadding="10dp"/>
+
+    </RadioGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

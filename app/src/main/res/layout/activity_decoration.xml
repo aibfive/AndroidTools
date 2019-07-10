@@ -6,20 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".MainActivity">
+    tools:context=".DecorationActivity">
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/grid_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:alignmentMode="alignBounds"
         app:columnCount="3"
-        app:orientation="horizontal">
+        app:orientation="horizontal"
+        app:useDefaultMargins="false">
 
         <TextView
-            android:id="@+id/decoration"
             android:layout_height="150dp"
             android:layout_width="0dp"
-            android:text="Decoration"
+            android:text="Vertical\nDecoration"
             android:textSize="14sp"
             android:textColor="@android:color/black"
             android:background="@drawable/bg_grid_item"
@@ -30,13 +31,12 @@
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:drawableTop="@mipmap/ic_launcher_round"
-            android:onClick="onDecorationClick"/>
+            android:onClick="onVerticalDecorationClick"/>
 
         <TextView
-            android:id="@+id/item_decoration1"
             android:layout_height="150dp"
             android:layout_width="0dp"
-            android:text="ItemDecoration"
+            android:text="Horizontal\nDecoration"
             android:textSize="14sp"
             android:textColor="@android:color/black"
             android:background="@drawable/bg_grid_item"
@@ -47,25 +47,7 @@
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:drawableTop="@mipmap/ic_launcher_round"
-            android:onClick="onItemDecorationClick"/>
-
-        <TextView
-            android:id="@+id/item_decoration2"
-            android:layout_height="150dp"
-            android:layout_width="0dp"
-            android:text="ItemDecoration"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:background="@drawable/bg_grid_item"
-            android:layout_margin="10dp"
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1"
-            android:gravity="bottom|center_horizontal"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:drawableTop="@mipmap/ic_launcher_round"
-            android:onClick="onItemDecorationClick"/>
-
+            android:onClick="onHorizontalDecorationClick"/>
 
     </androidx.gridlayout.widget.GridLayout>
 
