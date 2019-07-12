@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:fillViewport="true"
+    tools:context=".page.swipeback.SwipeBackActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:showDividers="middle"
+        android:divider="@drawable/divider_vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Common"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:onClick="onCommonClick"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="ScrollView"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:onClick="onScrollViewClick"/>
+
+    </LinearLayout>
+
+</ScrollView>

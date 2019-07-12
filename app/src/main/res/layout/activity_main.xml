@@ -16,7 +16,6 @@
         app:orientation="horizontal">
 
         <TextView
-            android:id="@+id/decoration"
             android:layout_height="150dp"
             android:layout_width="0dp"
             android:text="Decoration"
@@ -33,10 +32,9 @@
             android:onClick="onDecorationClick"/>
 
         <TextView
-            android:id="@+id/item_decoration1"
             android:layout_height="150dp"
             android:layout_width="0dp"
-            android:text="ItemDecoration"
+            android:text="SwipeBack"
             android:textSize="14sp"
             android:textColor="@android:color/black"
             android:background="@drawable/bg_grid_item"
@@ -47,7 +45,7 @@
             android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:drawableTop="@mipmap/ic_launcher_round"
-            android:onClick="onItemDecorationClick"/>
+            android:onClick="onSwipeBackClick"/>
 
         <TextView
             android:id="@+id/item_decoration2"

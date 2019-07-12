@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@android:color/white"
-    tools:context=".VerticalDecorationActivity">
+    tools:context=".page.decoration.VerticalDecorationActivity">
 
     <RadioGroup
         android:id="@+id/radio_group"

@@ -11,7 +11,7 @@ import com.aib.base.swipeback.tools.Util;
  * Created by zh on 2018/10/19.
  * 滑动返回基类
  */
-public class SwipeBackActivity extends FrameActivity {
+public abstract class SwipeBackActivity extends FrameActivity {
     private final String TAG = getClass().getSimpleName();
     private Activity mActivity;
     private SwipeBackActivityHelper mHelper;

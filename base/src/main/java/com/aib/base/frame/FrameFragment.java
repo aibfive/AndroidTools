@@ -1,14 +1,23 @@
 package com.aib.base.frame;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 
+import com.aib.base.annotate.RequestPermissionFail;
+import com.aib.base.annotate.RequestPermissionSuccess;
+
 import org.greenrobot.eventbus.EventBus;
 
+import java.lang.reflect.Method;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -24,21 +33,28 @@ public abstract class FrameFragment extends Fragment {
     protected FrameActivity context;
     protected View rootView;
     protected boolean isInit = false;
-    private boolean isRegister = false;
     private Unbinder unbinder;
 
     protected abstract int layoutId();
 
-    protected abstract void initData();
+    protected void initData(){
 
-    protected abstract void initComponent();
+    }
 
-    protected abstract void initListener();
+    protected void initComponent(){
 
-    protected abstract void refreshUI();
+    }
+
+    protected void initListener(){
+
+    }
+
+    protected void refreshUI(){
+
+    }
 
     public void registerEventBus() {
-        isRegister = true;
+        EventBus.getDefault().register(this);
     }
 
     @Override
@@ -55,9 +71,6 @@ public abstract class FrameFragment extends Fragment {
             initComponent();
             initListener();
             isInit = true;
-        }
-        if (isRegister) {
-            EventBus.getDefault().register(this);
         }
     }
 
@@ -95,7 +108,7 @@ public abstract class FrameFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (isRegister) {
+        if (EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().unregister(this);
         }
     }
@@ -151,4 +164,99 @@ public abstract class FrameFragment extends Fragment {
         }
         startActivityForResult(i, requestCode);
     }
+
+    /**
+     * 封装获取权限的逻辑
+     *
+     * @param code
+     * @param permissions
+     */
+    public void needPermission(int code, String... permissions) {
+        if (hasPermission(permissions)) {
+            doRequestPermissionSuccess(code);
+        } else {
+            requestPermission(code, permissions);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        boolean hasPermission = true;
+        for (int results : grantResults) {
+            if (results != PackageManager.PERMISSION_GRANTED) {
+                hasPermission = false;
+                break;
+            }
+        }
+        if (hasPermission) {
+            doRequestPermissionSuccess(requestCode);
+        } else {
+            doRequestPermissionFail(requestCode);
+        }
+    }
+
+    /**
+     * 执行获取权限成功方法
+     *
+     * @param code
+     */
+    protected void doRequestPermissionSuccess(int code) {
+        Method[] methods = getClass().getMethods();
+        for (Method method : methods) {
+            RequestPermissionSuccess r = method.getAnnotation(RequestPermissionSuccess.class);
+            if (r != null && r.requestCode() == code) {
+                try {
+                    method.invoke(this);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    /**
+     * 执行获取权限失败方法
+     *
+     * @param code
+     */
+    protected void doRequestPermissionFail(int code) {
+        Method[] methods = getClass().getMethods();
+        for (Method method : methods) {
+            RequestPermissionFail r = method.getAnnotation(RequestPermissionFail.class);
+            if (r != null && r.requestCode() == code) {
+                try {
+                    method.invoke(this);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    /**
+     * 检查权限是否拥有
+     *
+     * @param permissions
+     * @return
+     */
+    public boolean hasPermission(String... permissions) {
+        for (String permission : permissions) {
+            if (ContextCompat.checkSelfPermission(getContext(), permission) != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    /**
+     * 请求权限
+     *
+     * @param code
+     * @param permissions
+     */
+    public void requestPermission(int code, String... permissions) {
+        ActivityCompat.requestPermissions(getActivity(), permissions, code);
+    }
+
 }

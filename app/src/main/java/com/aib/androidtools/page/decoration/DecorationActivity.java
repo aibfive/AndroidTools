@@ -1,11 +1,11 @@
-package com.aib.androidtools;
+package com.aib.androidtools.page.decoration;
 
 import android.view.View;
 
+import com.aib.androidtools.R;
 import com.aib.base.frame.FrameActivity;
-import com.aib.base.swipeback.SwipeBackActivity;
 
-public class DecorationActivity extends SwipeBackActivity {
+public class DecorationActivity extends FrameActivity {
 
     @Override
     protected int layoutId() {
