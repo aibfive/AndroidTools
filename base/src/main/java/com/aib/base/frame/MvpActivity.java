@@ -12,7 +12,7 @@ import java.util.List;
  * @description MVP activity的基础类
  */
 
-public class MvpActivity extends FrameActivity {
+public abstract class MvpActivity extends FrameActivity {
 
     protected List<FramePresenter> presenters = new ArrayList<>();
 

@@ -1,41 +1,27 @@
-package com.aib.androidtools;
+package com.aib.androidtools.page;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 
-import com.aib.androidtools.page.MainAActivity;
-import com.aib.androidtools.page.decoration.DecorationActivity;
+import com.aib.androidtools.MainActivity;
+import com.aib.androidtools.R;
 import com.aib.base.frame.FrameActivity;
 
-public class MainActivity extends FrameActivity {
-
-    @Override
-    protected int layoutId() {
-        return R.layout.activity_main;
-    }
-
-    /**
-     * RecyclerView的子项装饰
-     * @param view
-     */
-    public void onDecorationClick(View view){
-        gotoActivityNotClose(DecorationActivity.class, null);
-    }
-
-
-    public void onSwipeBackClick(View view){
-        gotoActivityNotClose(MainAActivity.class, null);
-        //设置切换动画
-
-        overridePendingTransition(R.anim.in_from_down, R.anim.out_to_up);
-    }
+public class MainAActivity extends FrameActivity{
 
     private final String TAG = getClass().getName();
 
     @Override
+    protected int layoutId() {
+        return R.layout.activity_main_a;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Log.i("GG", TAG+"-->onCreate");
     }
 
@@ -75,4 +61,11 @@ public class MainActivity extends FrameActivity {
         Log.i("GG", TAG+"-->onDestroy");
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        gotoActivityNotClose(MainActivity.class, null);
+        overridePendingTransition(R.anim.revert_out_to_up, R.anim.revert_in_from_down);
+
+    }
 }
