@@ -7,12 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".page.MainAActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.aib.base.util.StepView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="哈哈哈哈哈哈哈哈"
-        android:textColor="@android:color/holo_red_light"
-        android:textSize="18sp"
+        app:stepTextColor="@android:color/darker_gray"
+        app:stepTextSize="14sp"
+        app:stepTexts="@array/vertical_items"
         android:layout_gravity="center"/>
 
 </FrameLayout>

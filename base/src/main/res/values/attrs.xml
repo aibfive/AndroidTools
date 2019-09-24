@@ -13,4 +13,20 @@
     </declare-styleable>
 
     <attr name="SwipeBackLayoutStyle" format="reference"/>
+
+    <declare-styleable name="StepView">
+        <attr name="stepCount" format="integer"/>
+        <attr name="currentStep" format="reference"/>
+        <attr name="normalDrawable" format="reference"/>
+        <attr name="stepDrawable" format="reference"/>
+        <attr name="drawableSize" format="dimension"/>
+        <attr name="stepTextColor" format="color"/>
+        <attr name="stepDescribeColor" format="color"/>
+        <attr name="stepTextSize" format="dimension"/>
+        <attr name="stepDescribeSize" format="dimension"/>
+        <attr name="stepTexts" format="reference"/>
+        <attr name="stepDescribes" format="reference"/>
+        <attr name="stepTextMarginTop" format="dimension"/>
+        <attr name="stepDescribeMarginTop" format="dimension"/>
+    </declare-styleable>
 </resources>

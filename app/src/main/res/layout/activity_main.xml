@@ -5,66 +5,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="@android:color/white"
     tools:context=".MainActivity">
 
-    <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/grid_layout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:columnCount="3"
-        app:orientation="horizontal">
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_height="150dp"
-            android:layout_width="0dp"
-            android:text="Decoration"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:background="@drawable/bg_grid_item"
-            android:layout_margin="10dp"
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1"
-            android:gravity="bottom|center_horizontal"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:drawableTop="@mipmap/ic_launcher_round"
-            android:onClick="onDecorationClick"/>
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/grid_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:columnCount="3"
+            app:orientation="horizontal">
 
-        <TextView
-            android:layout_height="150dp"
-            android:layout_width="0dp"
-            android:text="SwipeBack"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:background="@drawable/bg_grid_item"
-            android:layout_margin="10dp"
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1"
-            android:gravity="bottom|center_horizontal"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:drawableTop="@mipmap/ic_launcher_round"
-            android:onClick="onSwipeBackClick"/>
+            <TextView
+                android:layout_height="150dp"
+                android:layout_width="0dp"
+                android:text="Decoration"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:background="@drawable/bg_grid_item"
+                android:layout_margin="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                android:gravity="bottom|center_horizontal"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:drawableTop="@mipmap/ic_launcher_round"
+                android:onClick="onDecorationClick"/>
 
-        <TextView
-            android:id="@+id/item_decoration2"
-            android:layout_height="150dp"
-            android:layout_width="0dp"
-            android:text="ItemDecoration"
-            android:textSize="14sp"
-            android:textColor="@android:color/black"
-            android:background="@drawable/bg_grid_item"
-            android:layout_margin="10dp"
-            app:layout_columnWeight="1"
-            app:layout_rowWeight="1"
-            android:gravity="bottom|center_horizontal"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:drawableTop="@mipmap/ic_launcher_round"
-            android:onClick="onItemDecorationClick"/>
+            <TextView
+                android:layout_height="150dp"
+                android:layout_width="0dp"
+                android:text="SwipeBack"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:background="@drawable/bg_grid_item"
+                android:layout_margin="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                android:gravity="bottom|center_horizontal"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:drawableTop="@mipmap/ic_launcher_round"
+                android:onClick="onSwipeBackClick"/>
+
+            <TextView
+                android:id="@+id/item_decoration2"
+                android:layout_height="150dp"
+                android:layout_width="0dp"
+                android:text="ItemDecoration"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:background="@drawable/bg_grid_item"
+                android:layout_margin="10dp"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                android:gravity="bottom|center_horizontal"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:drawableTop="@mipmap/ic_launcher_round"
+                android:onClick="onItemDecorationClick"/>
 
 
-    </androidx.gridlayout.widget.GridLayout>
+        </androidx.gridlayout.widget.GridLayout>
+
+        <com.aib.base.util.StepView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:stepTextColor="@android:color/white"
+            app:stepTextSize="14sp"
+            app:stepTexts="@array/vertical_items"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimaryDark"/>
+
+    </LinearLayout>
+
+
 
 </androidx.core.widget.NestedScrollView>
